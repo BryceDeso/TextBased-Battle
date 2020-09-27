@@ -4,9 +4,8 @@ using System.Text;
 
 namespace HelloWorld
 {
-    class Knight : Character
+    class Wizard : Character
     {
 
     }
-
 }
