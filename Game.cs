@@ -4,12 +4,29 @@ using System.Text;
 
 namespace HelloWorld
 {
+
+    struct Item
+    {
+        public string name;
+        public int damage;
+    }
+
     class Game
     {
+
+        private bool _gameOver = false;
+
         //Run the game
         public void Run()
         {
-            
+            Start();
+
+                while (_gameOver == false)
+                {
+                Update();
+                }
+
+            End();
         }
 
         //Performed once when the game begins
