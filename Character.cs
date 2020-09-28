@@ -43,6 +43,11 @@ namespace HelloWorld
             return damage;
         }
 
+        public void AddItemToInventory(Item item, int index)
+        {
+            _inventory[index] = item;
+        }
+
         public bool GetIsAlive()
         {
             return _health > 0;

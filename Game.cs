@@ -51,6 +51,41 @@ namespace HelloWorld
 
         }
 
+        public void GetInput(string option1, string option2, string query)
+        {
+            Console.WriteLine(query);
+            Console.WriteLine("1. " + option1);
+            Console.WriteLine("2. " + option2);
+
+            char input = ' ';
+            while (input != '1' && input != '2' && input != '3')
+            {
+                input = Console.ReadKey().KeyChar;
+                if (input != '1' && input != '2' && input != '3')
+                {
+                    Console.WriteLine("Invalid Input");
+                }
+            }
+        }
+
+        public void GetInput(string option1, int damage1, string option2, int damage2, string query)
+        {
+            Console.WriteLine(query);
+            Console.WriteLine("1. " + option1);
+            Console.WriteLine("2. " + option2);
+
+            char input = ' ';
+            while (input != '1' && input != '2' && input != '3')
+            {
+                input = Console.ReadKey().KeyChar;
+                if (input != '1' && input != '2' && input != '3')
+                {
+                    Console.WriteLine("Invalid Input");
+                }
+            }
+        }
+
+
         //Sets values to any items added to game.
         public void InitalizeItems()
         {
@@ -64,9 +99,17 @@ namespace HelloWorld
 
         public void EquipWeapon()
         {
-            Console.WriteLine("Please Select a weapon.");
-            Console.WriteLine(_bow.name);
-            Console.WriteLine(_claymore.name);
+            GetInput(_bow.name, _claymore.name, "Please select a weapon");
+            char input = ' ';
+            if(input == '1')
+            {
+                _player.AddItemToInventory(_bow, 0);
+                _player.AddItemToInventory(_dagger, 1);
+            }
+            else
+            {
+                _player.AddItemToInventory()
+            }
  
         }
 
