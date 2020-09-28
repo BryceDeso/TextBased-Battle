@@ -6,17 +6,15 @@ namespace HelloWorld
 {
     class Character
     {
-        private int _health;
-        private int _damage;
-        private string _name;
-        private Item[] _inventory;
+        protected int _health;
+        protected int _damage;
+        protected string _name;
 
         public Character()
         {
             _health = 100;
             _damage = 10;
             _name = "Player";
-            _inventory = new Item[2];
         }
 
         public Character(int healthVal, int damageVal)
@@ -24,7 +22,6 @@ namespace HelloWorld
             _health = healthVal;
             _damage = damageVal;
             _name = "Player";
-            _inventory = new Item[2];
         }
 
         public virtual int Attack(Character enemy)
@@ -36,21 +33,21 @@ namespace HelloWorld
         public int TakeDamage(int damage)
         {
             _health -= damage;
-            if(_health < 0)
+            if (_health < 0)
             {
                 _health = 0;
             }
             return damage;
         }
 
-        public void AddItemToInventory(Item item, int index)
-        {
-            _inventory[index] = item;
-        }
-
         public bool GetIsAlive()
         {
             return _health > 0;
+        }
+
+        public string GetName()
+        {
+            return _name;
         }
 
         //Gets character health
