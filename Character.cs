@@ -40,6 +40,13 @@ namespace HelloWorld
             return damage;
         }
 
+        public virtual void PrintStats(Character player)
+        {
+            Console.WriteLine(player._name);
+            Console.WriteLine("Health: "+ player._health);
+            Console.WriteLine("Damage: " + player._damage);
+        }
+
         public bool GetIsAlive()
         {
             return _health > 0;

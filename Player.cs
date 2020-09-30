@@ -20,6 +20,21 @@ namespace HelloWorld
         {
             _inventory[index] = item;
         }
+
+        public void PrintInventory(Player player)
+        {
+            Item[] inventory = player.GetInventory();
+
+            for(int i = 0; i < inventory.Length; i++)
+            {
+                Console.WriteLine(inventory[i].name + "\nDamage" + inventory[i].damage);
+            }
+        }
+
+        public Item[] GetInventory()
+        {
+            return _inventory;
+        }
     }
 
 }
