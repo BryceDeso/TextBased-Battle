@@ -10,25 +10,19 @@ namespace HelloWorld
 
         public Wizard() : base()
         {
-            _mana = 50;
+            _name = "Evil Wizard";
+            _damage = 20;
+            _mana = 100;
         }
 
+        //This override of Attack will subtract 5 from _mana.
         public override int Attack(Character enemy)
         {
-            
-            int totalDamage = 0;
-            if(_mana > 0)
-            {
-                _mana -= 25;
-                int magicDamage = 15;
-                _damage += magicDamage = totalDamage;
-                return totalDamage;
-            }
-
-            totalDamage = base.Attack(enemy);
-            return totalDamage;
+            _mana -= 5;
+            return base.Attack(enemy);
         }
 
+        //This override of PrintStats makes it print the amount left in _mana.
         public override void PrintStats(Character player)
         {
             base.PrintStats(player);

@@ -24,6 +24,7 @@ namespace HelloWorld
             _name = "Player";
         }
 
+        //Allows a character to attack another character
         public virtual int Attack(Character enemy)
         {
             int damageTaken = enemy.TakeDamage(_damage);
@@ -40,6 +41,7 @@ namespace HelloWorld
             return damage;
         }
 
+        //Prints character stats
         public virtual void PrintStats(Character player)
         {
             Console.WriteLine(player._name);
@@ -47,11 +49,7 @@ namespace HelloWorld
             Console.WriteLine("Damage: " + player._damage);
         }
 
-        public bool GetIsAlive()
-        {
-            return _health > 0;
-        }
-
+        //Gets character health
         public string GetName()
         {
             return _name;

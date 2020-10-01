@@ -9,6 +9,7 @@ namespace HelloWorld
     {
         public string name;
         public int damage;
+        public int healthBoost;
     }
 
     class Game
@@ -18,7 +19,7 @@ namespace HelloWorld
         private Wizard _wizard;
         private Item _bow;
         private Item _claymore;
-        private Item _dagger;
+        private Item _healthPotion;
 
         //Run the game
         public void Run()
@@ -106,8 +107,8 @@ namespace HelloWorld
             _bow.name = "Bow";
             _claymore.damage = 20;
             _claymore.name = "Claymore";
-            _dagger.damage = 5;
-            _dagger.name = "Dagger";
+            _healthPotion.name = "Health potion";
+            _healthPotion.healthBoost = 50;
         }
 
         //Lets the player pick a weapon and equip them in their inventory.
@@ -117,43 +118,46 @@ namespace HelloWorld
             GetInput(out input, _bow.name, _bow.damage, _claymore.name, _claymore.damage, "Welcome Player! Please select a weapon for combat!");
             if (input == '1')
             {
-                _claymore.damage += _player.GetDamage() = TotalDamage;
+                _player.AddItemToInventory(_bow, 0);
+                _player.AddItemToInventory(_healthPotion, 1);
+                _player.EquipItem(_player, 0);
             }
             else
             {
-                _bow.damage += _player.GetDamage();
-            }
-        }       
+                _player.AddItemToInventory(_claymore, 0);
+                _player.AddItemToInventory(_healthPotion, 1);
+                _player.EquipItem(_player, 0);
+            }            
+        }
 
-        public void SwitchWeapon(Player player)
+        //Prints the player's inventory and allows them to select an item.
+        public void ViewInventory(Player player)
         {
-            Console.WriteLine("Please pick a weapon to equip");
-            Item[] inventory = _player.GetInventory();
+            Item[] inventory = player.GetInventory();
 
-            int input = ' ';
+            char input = ' ';
             for (int i = 0; i < inventory.Length; i++)
             {
-                Console.WriteLine(inventory[i].name + "\nDamage: " + inventory[i].damage);
+                Console.WriteLine("\n" +(i + 1) + ". " + inventory[i].name + " \n Damage: " + inventory[i].damage + "\nHealth Regen: " + inventory[i].healthBoost);
             }
 
             input = Console.ReadKey().KeyChar;
+
             switch (input)
-            { 
-                case 1 :
+            {
+                case '1':
                     {
-                        Console.WriteLine("You are now using " + inventory[0].name);
-                        Console.WriteLine("Your damage is now " + inventory[0].damage);
+                        Console.WriteLine("You already have " + inventory[0].name + "equipped.");
                         break;
                     }
-                case 2 :
+                case '2':
                     {
-                        Console.WriteLine("You are now using " + inventory[1].name);
-                        Console.WriteLine("Your damage is now " + inventory[1].damage);
+                        Console.WriteLine("You take a sip from the " + inventory[1].name + "!");
+                        Console.WriteLine("You gain " + inventory[1].healthBoost + " health!");
+                        _player.HealPlayer(_player, 1);
                         break;
                     }
             }
-
-
         }
 
         //This is where the player will fight the enemy.
@@ -162,15 +166,12 @@ namespace HelloWorld
             Console.WriteLine("FIGHT!");
 
             while (_player.GetHealth() > 0 && _wizard.GetHealth() > 0)
-            {
-                
-                Console.WriteLine("Player");
+            {                
                 _player.PrintStats(_player);
-                Console.WriteLine("\nEvil Wizard");
                 _wizard.PrintStats(_wizard);
 
                 char input = ' ';
-                GetInput(out input, "Attack", "Change weapon", "Player please choose a action.");
+                GetInput(out input, "Attack", "Open inventory(WARNING:Opening inventory takes your turn!)", "Player please choose a action.");
                 if (input == '1')
                 {
                     _player.Attack(_wizard);
@@ -180,7 +181,7 @@ namespace HelloWorld
                 }
                 else if (input == '2')
                 {
-                    SwitchWeapon(_player);
+                    ViewInventory(_player);
                 }
 
                 _wizard.Attack(_player);
