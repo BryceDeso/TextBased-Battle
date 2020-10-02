@@ -176,6 +176,22 @@ Task given: Create a program using C# that meets the specified requirements requ
     Description:  Sets the player's damage to item's damage selected in inventory.
 
 
+##### File: Weapon.cs
+
+**Attributes**
+
+    Name: _damage
+    Type: int
+    Description: Used to hold a value.
+
+    Name: Weapon(int)
+    Type: constructor
+    Description: Sets the damage of a character.
+
+    Name: GetDamage()
+    Type: int
+    Description: Returns _damage.
+
 ##### File: Wizard.cs
 
 **Attributes**

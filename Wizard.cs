@@ -6,14 +6,15 @@ namespace HelloWorld
 {
     class Wizard : Character
     {
+        private Weapon _weapon = new Weapon(20);
         private int _mana;
 
         public Wizard() : base()
-        {
+        {           
             _name = "Evil Wizard";
-            _damage = 20;
+            _damage = _weapon.GetDamage();
             _mana = 100;
-        }
+        }        
 
         //This override of Attack will subtract 5 from _mana.
         public override int Attack(Character enemy)
