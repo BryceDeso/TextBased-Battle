@@ -23,7 +23,7 @@ Task given: Create a program using C# that meets the specified requirements requ
 
 ### II. Objects
 
-##### File: Character.cs 
+#### File: Character.cs 
 
 **Attributes**
     
@@ -69,7 +69,7 @@ Task given: Create a program using C# that meets the specified requirements requ
     Description: Gets the _damage of whatever called the function.
 
 
-##### File: Game.cs
+#### File: Game.cs
 
 **Attributes**
 
@@ -155,7 +155,7 @@ Task given: Create a program using C# that meets the specified requirements requ
 
 
 
-##### File: Player.cs
+#### File: Player.cs
 
 **Attributes**
 
@@ -176,7 +176,7 @@ Task given: Create a program using C# that meets the specified requirements requ
     Description:  Sets the player's damage to item's damage selected in inventory.
 
 
-##### File: Weapon.cs
+#### File: Weapon.cs
 
 **Attributes**
 
@@ -192,7 +192,7 @@ Task given: Create a program using C# that meets the specified requirements requ
     Type: int
     Description: Returns _damage.
 
-##### File: Wizard.cs
+#### File: Wizard.cs
 
 **Attributes**
 
