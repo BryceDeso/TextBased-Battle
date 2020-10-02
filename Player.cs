@@ -28,10 +28,11 @@ namespace HelloWorld
         }
 
         //When called, will heal player by an item's health boost.
-        public void HealPlayer(Player player, int index)
+        public int HealPlayer(Player player, int index)
         {
-            int currentHealth = player.GetHealth();
-            currentHealth += _inventory[index].healthBoost;
+            int healthHealed = player.GetHealth() + _inventory[index].healthBoost;
+            player._health = healthHealed;
+            return player._health;           
         }
 
         //Sets the player's damage to a selected item in the inventory.

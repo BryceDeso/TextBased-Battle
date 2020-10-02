@@ -18,7 +18,7 @@ namespace HelloWorld
         //This override of Attack will subtract 5 from _mana.
         public override int Attack(Character enemy)
         {
-            _mana -= 5;
+            _mana -= 7;
             return base.Attack(enemy);
         }
 

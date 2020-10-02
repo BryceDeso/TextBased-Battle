@@ -108,8 +108,9 @@ namespace HelloWorld
             _claymore.damage = 20;
             _claymore.name = "Claymore";
             _healthPotion.name = "Health potion";
-            _healthPotion.healthBoost = 50;
+            _healthPotion.healthBoost = 30;
         }
+
 
         //Lets the player pick a weapon and equip them in their inventory.
         public void EquipWeapon()
@@ -147,14 +148,18 @@ namespace HelloWorld
             {
                 case '1':
                     {
-                        Console.WriteLine("You already have " + inventory[0].name + "equipped.");
+                        Console.WriteLine("\nYou already have " + inventory[0].name + "equipped.");
+                        Console.WriteLine("Press enter to continue.");
+                        Console.ReadKey();
                         break;
                     }
                 case '2':
                     {
-                        Console.WriteLine("You take a sip from the " + inventory[1].name + "!");
+                        Console.WriteLine("\nYou take a sip from the " + inventory[1].name + "!");
                         Console.WriteLine("You gain " + inventory[1].healthBoost + " health!");
                         _player.HealPlayer(_player, 1);
+                        Console.WriteLine("Press enter to continue.");
+                        Console.ReadKey();
                         break;
                     }
             }
@@ -163,19 +168,21 @@ namespace HelloWorld
         //This is where the player will fight the enemy.
         public void BattleLoop()
         {
-            Console.WriteLine("FIGHT!");
+            Console.Clear();
+            Console.WriteLine("\nFIGHT!");
 
             while (_player.GetHealth() > 0 && _wizard.GetHealth() > 0)
             {                
                 _player.PrintStats(_player);
+                Console.WriteLine("\n");
                 _wizard.PrintStats(_wizard);
 
                 char input = ' ';
-                GetInput(out input, "Attack", "Open inventory(WARNING:Opening inventory takes your turn!)", "Player please choose a action.");
+                GetInput(out input, "Attack", "Open inventory(WARNING:Opening inventory takes your turn!)", "\nPlayer please choose a action.");
                 if (input == '1')
                 {
                     _player.Attack(_wizard);
-                    Console.WriteLine("Player delt" + _player.GetDamage() + " to Wizard.");
+                    Console.WriteLine("\nPlayer delt" + _player.GetDamage() + " damage to Wizard.");
                     Console.WriteLine("Press enter to continue.");
                     Console.ReadKey();
                 }
@@ -185,7 +192,7 @@ namespace HelloWorld
                 }
 
                 _wizard.Attack(_player);
-                Console.WriteLine("Wizard delt " + _wizard.GetDamage() + " to Player.");
+                Console.WriteLine("\nWizard delt " + _wizard.GetDamage() + " damage to Player.");
                 Console.WriteLine("Press enter to continue.");
                 Console.ReadKey();
                 Console.Clear();

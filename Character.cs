@@ -45,7 +45,7 @@ namespace HelloWorld
         public virtual void PrintStats(Character player)
         {
             Console.WriteLine(player._name);
-            Console.WriteLine("Health: "+ player._health);
+            Console.WriteLine("Health: " + player._health);
             Console.WriteLine("Damage: " + player._damage);
         }
 
