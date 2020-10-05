@@ -1,6 +1,6 @@
 # How to play:
 
-The only buttons that will be needed in the game are the 1 and 2 number keys.
+The only buttons that will be needed to play the game are the 1 and 2 number keys.
 
 Controls
 -
