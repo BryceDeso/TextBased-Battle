@@ -1,15 +1,25 @@
-## How to play:
+# How to play:
 
-The only buttons that will be needed in the game are the 1 and 2 number keys. These keys will be used to select what you want to do in the game.
+The only buttons that will be needed in the game are the 1 and 2 number keys.
 
-#### Things to know:
+Options
+-
+
+- All options in the game will have a number next to them and pressing the 1 or 2 keys will select that option.
+
+Inventory
+-
 
 - When you select your inventory it will not allow you to exit until you select one of the items.
 
 - Your inventory holds the weapon you selected and a health potion.
 
-- When selected, the health potion will give you 30 health. It also has infinite uses.
+Health Potion
+-
 
-#### Known bugs
+- When selected from the inventory, you will gain 30 health back.
 
-The wizard's mana can drop into the negatives.
+Known bugs
+-
+
+- The wizard's mana can drop into the negatives.
