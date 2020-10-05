@@ -30,15 +30,15 @@ Task given: Create a program using C# that meets the specified requirements requ
     
     Name: _health
     Type: int
-    Description: Will hold a number value for a character's health.
+    Description: Used to define a character's health.
 
     Name: _damage
     Type: int
-    Description: Will hold a number value for a character's damage.
+    Description: Used to define a character's damage.
 
     Name: _name
     Type: string
-    Description: Will hold a string value for a character's name.
+    Description: Used to define a character's name.
 
     Name: Character() : Character(int, int)
     Type: Character
@@ -169,7 +169,7 @@ Task given: Create a program using C# that meets the specified requirements requ
 
     Name: HealPlayer(Player, int)
     Type: int
-    Description: When used, it will a player by an item's healthBoost.
+    Description: When used, it will give a player health by adding the player's health by an item's healthBoost.
 
     Name: EquipItem(Player, int)
     Type: void

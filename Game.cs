@@ -51,6 +51,7 @@ namespace HelloWorld
         //Performed once when the game ends
         public void End()
         {
+            Console.Clear();
             Console.WriteLine("Thanks for playing!");
         }
 
@@ -134,6 +135,8 @@ namespace HelloWorld
         //Prints the player's inventory and allows them to select an item.
         public void ViewInventory(Player player)
         {
+            Console.WriteLine("\nPlease select an item to use.");
+
             Item[] inventory = player.GetInventory();
 
             char input = ' ';
@@ -148,7 +151,7 @@ namespace HelloWorld
             {
                 case '1':
                     {
-                        Console.WriteLine("\nYou already have " + inventory[0].name + "equipped.");
+                        Console.WriteLine("\nYou already have " + inventory[0].name + " equipped.");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
                         break;
@@ -178,11 +181,11 @@ namespace HelloWorld
                 _wizard.PrintStats(_wizard);
 
                 char input = ' ';
-                GetInput(out input, "Attack", "Open inventory(WARNING:Opening inventory takes your turn!)", "\nPlayer please choose a action.");
+                GetInput(out input, "Attack", "Open inventory", "\nPlayer please choose an action.");
                 if (input == '1')
                 {
                     _player.Attack(_wizard);
-                    Console.WriteLine("\nPlayer delt" + _player.GetDamage() + " damage to Wizard.");
+                    Console.WriteLine("\nPlayer delt " + _player.GetDamage() + " damage to Wizard.");
                     Console.WriteLine("Press any key to continue.");
                     Console.ReadKey();
                 }
