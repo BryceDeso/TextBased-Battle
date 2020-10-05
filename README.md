@@ -8,8 +8,6 @@ The only buttons that will be needed in the game are the 1 and 2 number keys. Th
 
 - You have a health potion in your inventory.
 
-- Interacting with your weapon in your invetory will not do anything but show some text, basically wasting your turn.
-
 #### Known bugs
 
 If you stay alive long enough, the wizard's mana will drop into the negatives.
