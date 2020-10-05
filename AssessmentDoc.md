@@ -30,15 +30,15 @@ Task given: Create a program using C# that meets the specified requirements requ
     
     Name: _health
     Type: int
-    Description: 
+    Description: Will hold a number value for a character's health.
 
     Name: _damage
     Type: int
-    Description: 
+    Description: Will hold a number value for a character's damage.
 
     Name: _name
     Type: string
-    Description: 
+    Description: Will hold a string value for a character's name.
 
     Name: Character() : Character(int, int)
     Type: Character
