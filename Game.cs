@@ -149,7 +149,7 @@ namespace HelloWorld
                 case '1':
                     {
                         Console.WriteLine("\nYou already have " + inventory[0].name + "equipped.");
-                        Console.WriteLine("Press enter to continue.");
+                        Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
                         break;
                     }
@@ -158,7 +158,7 @@ namespace HelloWorld
                         Console.WriteLine("\nYou take a sip from the " + inventory[1].name + "!");
                         Console.WriteLine("You gain " + inventory[1].healthBoost + " health!");
                         _player.HealPlayer(_player, 1);
-                        Console.WriteLine("Press enter to continue.");
+                        Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
                         break;
                     }
@@ -183,7 +183,7 @@ namespace HelloWorld
                 {
                     _player.Attack(_wizard);
                     Console.WriteLine("\nPlayer delt" + _player.GetDamage() + " damage to Wizard.");
-                    Console.WriteLine("Press enter to continue.");
+                    Console.WriteLine("Press any key to continue.");
                     Console.ReadKey();
                 }
                 else if (input == '2')
@@ -193,7 +193,7 @@ namespace HelloWorld
 
                 _wizard.Attack(_player);
                 Console.WriteLine("\nWizard delt " + _wizard.GetDamage() + " damage to Player.");
-                Console.WriteLine("Press enter to continue.");
+                Console.WriteLine("Press any key to continue.");
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -201,13 +201,13 @@ namespace HelloWorld
             if(_player.GetHealth() > _wizard.GetHealth())
             {
                 Console.WriteLine("The Evil wizard has been defeated!");
-                Console.WriteLine("Press enter to continue!");
+                Console.WriteLine("Press any key to continue!");
                 Console.ReadKey();
             }
             else
             {
                 Console.WriteLine("The Evil Wizard has won...");
-                Console.WriteLine("Press enter to continue...");
+                Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
             }
 
