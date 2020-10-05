@@ -22,6 +22,7 @@ namespace HelloWorld
             _inventory[index] = item;
         }
 
+        //Gets inventory.
         public Item[] GetInventory()
         {
             return _inventory;

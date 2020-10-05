@@ -13,6 +13,7 @@ namespace HelloWorld
             _damage = damageVal;
         }
 
+        //Gets damage.
         public int GetDamage()
         {
             return _damage;

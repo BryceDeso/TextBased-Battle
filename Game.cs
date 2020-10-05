@@ -55,6 +55,7 @@ namespace HelloWorld
             Console.WriteLine("Thanks for playing!");
         }
 
+        //Initializes characters and displays the EquipWeapon funtion.
         public void CreateCharacter()
         {
             _player = new Player(100, 10);
@@ -113,7 +114,7 @@ namespace HelloWorld
         }
 
 
-        //Lets the player pick a weapon and equip them in their inventory.
+        //Lets the player pick a weapon and equip them it in their inventory.
         public void EquipWeapon()
         {
             char input = ' ';

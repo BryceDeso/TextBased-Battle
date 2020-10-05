@@ -31,6 +31,7 @@ namespace HelloWorld
             return damageTaken;
         }
 
+        //Will not allow the health to go below zero.
         public int TakeDamage(int damage)
         {
             _health -= damage;
