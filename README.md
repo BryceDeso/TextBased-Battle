@@ -2,7 +2,7 @@
 
 The only buttons that will be needed in the game are the 1 and 2 number keys.
 
-Options
+Controls
 -
 
 - All options in the game will have a number next to them and pressing the 1 or 2 keys will select that option.
